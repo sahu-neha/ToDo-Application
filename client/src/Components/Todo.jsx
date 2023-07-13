@@ -8,7 +8,8 @@ import { addData } from "../Utils/addData";
 import Pagination from "./Pagination";
 
 const Todo = () => {
-	const url = "http://localhost:8080/todo";
+	const url = `${process.env.REACT_APP_API_URL}/todo`;
+	// "http://localhost:8080/todo";
 
 	const [todos, setTodos] = useState([]);
 

@@ -46,7 +46,8 @@ const Login = () => {
 			password: userDetails.password,
 		};
 
-		addData("http://localhost:8080/user", newUser).then((res) => {
+		// "http://localhost:8080/user"
+		addData(`${process.env.REACT_APP_API_URL}/user`, newUser).then((res) => {
 			setIsAuthenticated(true);
 			setLoading(true);
 			setTimeout(() => {
@@ -82,7 +83,7 @@ const Login = () => {
 	};
 
 	useEffect(() => {
-		fetchData("http://localhost:8080/user").then((res) => {
+		fetchData(`${process.env.REACT_APP_API_URL}/user`).then((res) => {
 			setUsers(res.data);
 		});
 	}, []);
